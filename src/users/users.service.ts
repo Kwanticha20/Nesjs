@@ -22,7 +22,7 @@ export class UsersService {
     //await เพื่อรอให้การดึงข้อมูลเสร็จสิ้นก่อนที่จะส่งข้อมูลกลับต้องมีasync คู่ด้วย
     return await this.userRepository.find();
   }
-  
+
   //= กำหนดค่าตัวแปร
   async findOne(id: number): Promise<User> {
     const user = await this.userRepository.findOne({where:{id:id}});//id ในฐานข้อมูลเท่ากับค่าของตัวแปร id
@@ -48,8 +48,8 @@ export class UsersService {
       
       return 'Login successful';// ส่งข้อความเมื่อเข้าสู่ระบบสำเร็จ
     }
-    
-    return 'Invalid credentials'// ส่งข้อความเมื่อข้อมูลไม่ถูกต้อง
+      
+      return 'Invalid credentials'// ส่งข้อความเมื่อข้อมูลไม่ถูกต้อง
   }
 }
  
