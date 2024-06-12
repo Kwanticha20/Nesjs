@@ -12,16 +12,18 @@ export class UsersController {
 
   @Post('register')
   async create(@Body() createUserDto: CreateUserDto) {
-     // การสร้างผู้ใช้ใหม่ด้วยข้อมูลจาก createUserDtoi
+     // การสร้างผู้ใช้ใหม่ด้วยข้อมูลจาก createUserDto
     return await this.usersService.create(createUserDto);
   }
 
   @Get('users')
   async findAll():Promise<CreateUserDto[]> {
-    return await this.usersService.findAll();
+     // ใช้ await เพื่อรอการดำเนินการของ usersService.findAll()
+    return await this.usersService.findAll();// คืนค่าผลลัพธ์ที่ได้จากการดึงข้อมูลผู้ใช้ทั้งหมด
   }
 
   @Get('users/:id')
+  
   async findOne(@Param('id') id: number) {
     return await this.usersService.findOne(id);
   }
@@ -32,7 +34,7 @@ export class UsersController {
   }
 
   @Delete('users/:id')
-  async remove(@Param('id') id: number):Promise<DeleteResult> {
+  async dele0(@Param('id') id: number):Promise<DeleteResult> {
     return await this.usersService.remove(id);
   }
   
