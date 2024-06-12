@@ -7,10 +7,12 @@ import { Login } from './dto/login-user.dto';
 
 @Controller('apis')
 export class UsersController {
+  //ใช้เพื่อบอกว่าตัวแปรนี้สามารถเข้าถึงได้เฉพาะภายใน class นี้เท่านั้น 
   constructor(private readonly usersService: UsersService) {}
 
   @Post('register')
   async create(@Body() createUserDto: CreateUserDto) {
+     // การสร้างผู้ใช้ใหม่ด้วยข้อมูลจาก createUserDtoi
     return await this.usersService.create(createUserDto);
   }
 

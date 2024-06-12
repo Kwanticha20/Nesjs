@@ -6,7 +6,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { Login } from './dto/login-user.dto';
 
-@Injectable()//@Injectable() เป็น Decorator เพื่อระบุว่าคลาสที่ถูกประกาศเป็น Service สามารถถูก Inject หรือถูกใส่เข้าไปในคลาสอื่นได้ผ่าน Dependency Injection (DI) ของ NestJS
+@Injectable()//ใช้กำหนดให้ class นั้นเป็น service ที่สามารถถูก inject ได้
 export class UsersService {
   //constructor ใช้กำหนดค่าเริ่มต้นให้กับอ็อบเจกต์
   constructor(

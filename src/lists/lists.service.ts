@@ -5,7 +5,7 @@ import { UpdateListDto } from './dto/update-list.dto';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { List } from './entities/list.entity';
 ;
-
+//@Injectable() เป็น Decorator เพื่อระบุว่าคลาสที่ถูกประกาศเป็น Service สามารถถูก Inject หรือถูกใส่เข้าไปในคลาสอื่นได้ผ่าน Dependency Injection (DI) ของ NestJS
 @Injectable()
 export class ListsService {
   constructor(
@@ -22,8 +22,9 @@ export class ListsService {
   }
 
   async findOne(id: number):Promise<List> {
-   const list = await this.listsRepository.findOne({where:{id:id}});
-   return list
+   
+    const list = await this.listsRepository.findOne({where:{id:id}});
+    return list
   }
 
   async update(id: number, updateListDto: UpdateListDto):Promise<UpdateResult> {
